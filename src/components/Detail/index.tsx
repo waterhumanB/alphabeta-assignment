@@ -21,8 +21,12 @@ const Detail = () => {
 
   const wishlistHandler = () => {
     const wishlist = store.get('wishlist')
-    const newWishlist = wishlist ? [...wishlist, state] : [state]
-    store.set('wishlist', newWishlist)
+    const deduplication = wishlist?.find((e: Props) => e.id === state.id)
+
+    if (!deduplication) {
+      const newWishlist = wishlist ? [...wishlist, state] : [state]
+      store.set('wishlist', newWishlist)
+    }
   }
 
   return (
