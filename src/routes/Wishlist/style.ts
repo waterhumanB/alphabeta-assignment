@@ -18,7 +18,7 @@ export const WishListContainer = styled.div`
     font-weight: 700;
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 
     div {
       width: 100%;
@@ -26,6 +26,10 @@ export const WishListContainer = styled.div`
       align-items: center;
       display: flex;
       justify-content: center;
+    }
+
+    .name {
+      margin-left: 30px;
     }
   }
 `

@@ -52,7 +52,7 @@ const Wishlist = () => {
     <S.WishListContainer>
       <div className="listdesc">
         <div>상품 이미지</div>
-        <div>상품 이름</div>
+        <div className="name">상품 이름</div>
         <div>상세 설명</div>
         <div>상품 가격</div>
         <div>상품 등록일</div>
