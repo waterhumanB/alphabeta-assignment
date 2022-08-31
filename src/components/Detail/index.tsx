@@ -1,14 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import store from 'storejs'
 
-interface Props {
-  id: number
-  title: string
-  images: string
-  description: string
-  price: string
-  createdAt: string
-}
+import { Props } from '../../types'
 
 const Detail = () => {
   const location = useLocation()
@@ -32,7 +25,7 @@ const Detail = () => {
   return (
     <div>
       <div>
-        <img src={state.images} alt="img" />
+        <img src={state.images} alt={state.title} />
       </div>
       <div>{state.title}</div>
       <div>{state.description}</div>
