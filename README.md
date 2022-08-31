@@ -1,5 +1,7 @@
 # AlphabetA 기업과제
 
+## [배포주소](https://waterhumanb.github.io/alphabeta-assignment/)
+
 # 요구사항
 
 ## **[네비게이션]**
