@@ -46,7 +46,7 @@ const Detail = () => {
         <div className="price">{state.price}</div>
 
         <div className="btnwrap">
-          <div className="btnbox">
+          <div>
             <button onClick={infoConsole}>구매하기</button>
             <button onClick={wishlistHandler}>장바구니</button>
           </div>
