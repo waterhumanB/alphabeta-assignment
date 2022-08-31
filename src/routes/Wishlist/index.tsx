@@ -57,7 +57,7 @@ const Wishlist = () => {
         <div>상품 가격</div>
         <div>상품 등록일</div>
       </div>
-      {wishlist.map((data: Props) => (
+      {wishlist?.map((data: Props) => (
         <div className="wishlistbox" key={data.title}>
           <S.CheckBox
             checked={!!keepChecked(data)}
