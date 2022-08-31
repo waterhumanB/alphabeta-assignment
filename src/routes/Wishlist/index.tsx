@@ -3,7 +3,7 @@ import store from 'storejs'
 
 import { Props } from '../../types'
 
-import { CheckBox } from './style'
+import * as S from './style'
 
 const Wishlist = () => {
   const [chekedList, setCheckedList] = useState(store.get('checkwishlist'))
@@ -37,7 +37,7 @@ const Wishlist = () => {
   }
 
   const keepChecked = (data: { id: number }): boolean => {
-    return chekedList.some(
+    return chekedList?.some(
       (item: { id: number }) => item.id === Number(data.id),
     )
   }
@@ -48,11 +48,10 @@ const Wishlist = () => {
   }
 
   return (
-    <div>
-      <div>Wishlist</div>
+    <S.WishListContainer>
       {wishlist.map((data: Props) => (
-        <div key={data.title}>
-          <CheckBox
+        <div className="wishlistbox" key={data.title}>
+          <S.CheckBox
             checked={!!keepChecked(data)}
             data-id={data.id}
             onChange={handleChange}
@@ -65,11 +64,20 @@ const Wishlist = () => {
           <div>{data.title}</div>
           <div>{data.description}</div>
           <div>{data.price}</div>
-          <div>{data.createdAt}</div>
+          <div>
+            {data.createdAt
+              .split('/')[2]
+              .concat(
+                '-',
+                data.createdAt.split('/')[0],
+                '-',
+                data.createdAt.split('/')[1],
+              )}
+          </div>
         </div>
       ))}
       <button onClick={consoleHandler}> 구매하기</button>
-    </div>
+    </S.WishListContainer>
   )
 }
 
