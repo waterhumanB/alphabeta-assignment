@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import store from 'storejs'
 
+import WishItem from '../../components/WishItem'
 import { Props } from '../../types'
 
 import * as S from './style'
@@ -49,31 +50,23 @@ const Wishlist = () => {
 
   return (
     <S.WishListContainer>
+      <div className="listdesc">
+        <div>상품 이미지</div>
+        <div>상품 이름</div>
+        <div>상세 설명</div>
+        <div>상품 가격</div>
+        <div>상품 등록일</div>
+      </div>
       {wishlist.map((data: Props) => (
         <div className="wishlistbox" key={data.title}>
           <S.CheckBox
             checked={!!keepChecked(data)}
             data-id={data.id}
             onChange={handleChange}
-            style={{ width: '20px', border: '1px solid #eee', height: '20px' }}
             type="checkbox"
           />
-          <div>
-            <img src={data.images} alt={data.title} />
-          </div>
-          <div>{data.title}</div>
-          <div>{data.description}</div>
-          <div>{data.price}</div>
-          <div>
-            {data.createdAt
-              .split('/')[2]
-              .concat(
-                '-',
-                data.createdAt.split('/')[0],
-                '-',
-                data.createdAt.split('/')[1],
-              )}
-          </div>
+
+          <WishItem item={data} />
         </div>
       ))}
       <button onClick={consoleHandler}> 구매하기</button>
