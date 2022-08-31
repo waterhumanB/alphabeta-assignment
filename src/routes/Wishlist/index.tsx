@@ -6,7 +6,7 @@ import { Props } from '../../types'
 import { CheckBox } from './style'
 
 const Wishlist = () => {
-  const [chekedList, setCheckedList] = useState([])
+  const [chekedList, setCheckedList] = useState(store.get('checkwishlist'))
   const wishlist = store.get('wishlist')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +38,7 @@ const Wishlist = () => {
 
   const keepChecked = (data: { id: number }): boolean => {
     return chekedList.some(
-      (item: { id: number | string }) => item.id === Number(data.id),
+      (item: { id: number }) => item.id === Number(data.id),
     )
   }
 

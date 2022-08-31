@@ -1,9 +1,12 @@
+import { useCallback, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import store from 'storejs'
 
 import { Props } from '../../types'
+import Modal from '../modal'
 
 const Detail = () => {
+  const [modalOpen, setModalOpen] = useState(false)
   const location = useLocation()
   const state = location.state as Props
 
@@ -19,8 +22,13 @@ const Detail = () => {
     if (!deduplication) {
       const newWishlist = wishlist ? [...wishlist, state] : [state]
       store.set('wishlist', newWishlist)
+      setModalOpen(!modalOpen)
     }
   }
+
+  const ToggleModal = useCallback(() => {
+    setModalOpen(!modalOpen)
+  }, [modalOpen])
 
   return (
     <div>
@@ -33,6 +41,7 @@ const Detail = () => {
       <div>{state.createdAt}</div>
       <button onClick={infoConsole}>구매하기</button>
       <button onClick={wishlistHandler}>장바구니</button>
+      {modalOpen && <Modal toggleModal={ToggleModal} />}
     </div>
   )
 }
