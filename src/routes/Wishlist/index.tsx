@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import store from 'storejs'
 
+import Pagination from '../../components/Pagination'
 import WishItem from '../../components/WishItem'
 import { Props } from '../../types'
 
@@ -8,6 +9,9 @@ import * as S from './style'
 
 const Wishlist = () => {
   const [chekedList, setCheckedList] = useState(store.get('checkwishlist'))
+  const [page, setPage] = useState(2)
+
+  const offset = (page - 1) * 10
 
   const wishlist = store.get('wishlist')
 
@@ -58,7 +62,7 @@ const Wishlist = () => {
         <div>상품 가격</div>
         <div>상품 등록일</div>
       </div>
-      {wishlist?.map((data: Props) => (
+      {wishlist?.slice(offset, offset + 10).map((data: Props) => (
         <div className="wishlistbox" key={data.title}>
           <S.CheckBox
             checked={!!keepChecked(data)}
@@ -70,8 +74,13 @@ const Wishlist = () => {
           <WishItem item={data} />
         </div>
       ))}
-
-      <button onClick={consoleHandler}>구매하기</button>
+      <Pagination
+        total={wishlist.length}
+        limit={10}
+        page={page}
+        setPage={setPage}
+      />
+      <button onClick={consoleHandler}> 구매하기</button>
     </S.WishListContainer>
   )
 }
