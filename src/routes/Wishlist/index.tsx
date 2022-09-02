@@ -8,6 +8,7 @@ import * as S from './style'
 
 const Wishlist = () => {
   const [chekedList, setCheckedList] = useState(store.get('checkwishlist'))
+
   const wishlist = store.get('wishlist')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +70,8 @@ const Wishlist = () => {
           <WishItem item={data} />
         </div>
       ))}
-      <button onClick={consoleHandler}> 구매하기</button>
+
+      <button onClick={consoleHandler}>구매하기</button>
     </S.WishListContainer>
   )
 }
