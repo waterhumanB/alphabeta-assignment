@@ -28,7 +28,7 @@ const Home = () => {
           </Link>
         ))}
       </S.ItemContainer>
-      <div ref={ref} />
+      {mock.length > offset && <div ref={ref} />}
       {inView && <S.Spinner />}
     </S.MainContainer>
   )
