@@ -62,20 +62,24 @@ const Wishlist = () => {
         <div>상품 가격</div>
         <div>상품 등록일</div>
       </div>
-      {wishlist?.slice(offset, offset + 10).map((data: Props) => (
-        <div className="wishlistbox" key={data.title}>
-          <S.CheckBox
-            checked={!!keepChecked(data)}
-            data-id={data.id}
-            onChange={handleChange}
-            type="checkbox"
-          />
+      {wishlist ? (
+        wishlist?.slice(offset, offset + 10).map((data: Props) => (
+          <div className="wishlistbox" key={data.title}>
+            <S.CheckBox
+              checked={!!keepChecked(data)}
+              data-id={data.id}
+              onChange={handleChange}
+              type="checkbox"
+            />
 
-          <WishItem item={data} />
-        </div>
-      ))}
+            <WishItem item={data} />
+          </div>
+        ))
+      ) : (
+        <div className="notwish"> 장바구니가 비어있습니다.</div>
+      )}
       <Pagination
-        total={wishlist.length}
+        total={wishlist?.length}
         limit={10}
         page={page}
         setPage={setPage}

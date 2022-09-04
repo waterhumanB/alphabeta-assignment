@@ -32,6 +32,13 @@ export const WishListContainer = styled.div`
       margin-left: 30px;
     }
   }
+
+  .notwish {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const CheckBox = styled.input`
