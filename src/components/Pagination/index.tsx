@@ -1,4 +1,5 @@
 import { PageProps } from '../../types'
+import { ReactComponent as PageBtn } from '../../assets/imgs/pagination.svg'
 
 import * as S from './style'
 
@@ -12,7 +13,7 @@ function Pagination({ total, limit, page, setPage }: PageProps) {
   return (
     <S.Nav>
       <S.Button onClick={() => setPage(page - 1)} disabled={page === 1}>
-        <div>&lt;</div>
+        <PageBtn style={{ transform: 'scaleX(-1)' }} />
       </S.Button>
       {pageNumbers.map((i) => (
         <S.Button
@@ -24,7 +25,7 @@ function Pagination({ total, limit, page, setPage }: PageProps) {
         </S.Button>
       ))}
       <S.Button onClick={() => setPage(page + 1)} disabled={page === numPages}>
-        <div>&gt;</div>
+        <PageBtn />
       </S.Button>
     </S.Nav>
   )

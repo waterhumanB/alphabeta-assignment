@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
+import { ReactComponent as Logo } from '../../assets/imgs/logo.svg'
+
 import * as S from './style'
 
 const Header = () => {
@@ -9,12 +11,25 @@ const Header = () => {
     >
       <S.HeaderBox>
         <NavLink to="/">
-          <button>Logo</button>
+          <button>
+            <Logo />
+          </button>
         </NavLink>
 
-        <NavLink to="wishlist">
-          <button>Wishlist</button>
-        </NavLink>
+        <div>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? '' : 'usepage')}
+          >
+            <button>Home</button>
+          </NavLink>
+          <NavLink
+            to="wishlist"
+            className={({ isActive }) => (isActive ? '' : 'usepage')}
+          >
+            <button>Wishlist</button>
+          </NavLink>
+        </div>
       </S.HeaderBox>
     </S.HeaderContainer>
   )

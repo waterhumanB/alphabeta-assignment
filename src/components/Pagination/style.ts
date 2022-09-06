@@ -21,5 +21,14 @@ export const Button = styled.button`
     cursor: revert;
     transform: revert;
     color: #999;
+
+    rect {
+      stroke: #999;
+    }
+
+    path {
+      stroke: #999;
+      fill: #999;
+    }
   }
 `

@@ -2,10 +2,9 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  height: 30px;
+  height: 40px;
   position: fixed;
   background: #fff;
-  border: 1px solid #999;
 `
 export const HeaderBox = styled.div`
   max-width: 1200px;
@@ -16,7 +15,19 @@ export const HeaderBox = styled.div`
   margin: auto;
 
   button {
-    margin: auto 20px;
+    font-weight: 700;
+    margin-left: 10px;
     font-size: 18px;
+
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .usepage {
+    button {
+      color: #999;
+    }
   }
 `

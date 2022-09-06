@@ -9,7 +9,7 @@ import * as S from './style'
 
 const Wishlist = () => {
   const [chekedList, setCheckedList] = useState(store.get('checkwishlist'))
-  const [page, setPage] = useState(2)
+  const [page, setPage] = useState(1)
 
   const offset = (page - 1) * 10
 
