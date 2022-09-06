@@ -11,7 +11,7 @@ const Home = () => {
   const [page, setPage] = useState(2)
   const [ref, inView] = useInView()
 
-  const offset = (page - 1) * 10
+  const offset = (page - 1) * 12
 
   useEffect(() => {
     setTimeout(() => {

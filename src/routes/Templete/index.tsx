@@ -8,7 +8,7 @@ const Templete = () => {
   return (
     <>
       <Header view={inView} />
-      <main style={{ padding: '30px 10px' }}>
+      <main style={{ padding: '40px 5px' }}>
         <div ref={ref} />
         <Outlet />
       </main>
