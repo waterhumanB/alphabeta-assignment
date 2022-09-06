@@ -5,6 +5,17 @@ export const HeaderContainer = styled.header`
   height: 40px;
   position: fixed;
   background: #fff;
+  display: flex;
+  justify-content: space-between;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-in-out 0s;
+
+  &.invisible {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out 0s;
+  }
 `
 export const HeaderBox = styled.div`
   max-width: 1200px;

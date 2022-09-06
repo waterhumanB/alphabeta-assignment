@@ -4,11 +4,13 @@ import { ReactComponent as Logo } from '../../assets/imgs/logo.svg'
 
 import * as S from './style'
 
-const Header = () => {
+interface HeadProps {
+  view: boolean
+}
+
+const Header = ({ view }: HeadProps) => {
   return (
-    <S.HeaderContainer
-      style={{ display: 'flex', justifyContent: 'space-between' }}
-    >
+    <S.HeaderContainer className={view ? '' : 'invisible'}>
       <S.HeaderBox>
         <NavLink to="/">
           <button>

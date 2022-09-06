@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const ItemBox = styled.button`
   width: 270px;
   height: 300px;
-  border: 1px solid #999;
   margin: 5px;
   padding: 5px;
   font-size: 14px;
@@ -27,5 +26,10 @@ export const ItemBox = styled.button`
     align-items: center;
     justify-content: space-around;
     margin: 10px;
+  }
+
+  :hover {
+    /* stylelint-disable-next-line color-function-notation */
+    box-shadow: rgb(0 0 0 / 0.16) 0 0 8px;
   }
 `
