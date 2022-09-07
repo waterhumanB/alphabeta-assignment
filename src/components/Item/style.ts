@@ -8,6 +8,11 @@ export const ItemBox = styled.button`
   transition: all 0.2s ease-in-out 0s;
   box-sizing: border-box;
 
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    padding: 0;
+  }
+
   img {
     width: 260px;
     height: 260px;
@@ -39,9 +44,11 @@ export const ItemBox = styled.button`
     }
   }
 
-  :hover {
-    /* stylelint-disable-next-line color-function-notation */
-    box-shadow: rgb(0 0 0 / 0.16) 0 0 8px;
+  @media screen and (min-width: 450px) {
+    :hover {
+      /* stylelint-disable-next-line color-function-notation */
+      box-shadow: rgb(0 0 0 / 0.16) 0 0 8px;
+    }
   }
 `
 
@@ -49,6 +56,11 @@ export const LogoBox = styled.div`
   display: flex;
   align-items: center;
   margin: auto auto 10px 15px;
+
+  @media screen and (max-width: 450px) {
+    justify-content: center;
+    margin: auto auto 10px;
+  }
 
   svg {
     width: 28px;

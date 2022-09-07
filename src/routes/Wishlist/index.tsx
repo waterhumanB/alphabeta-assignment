@@ -64,42 +64,50 @@ const Wishlist = () => {
       <div className="maintitle">장바구니</div>
       <table>
         <colgroup>
-          <col width="70%" />
+          <col className="mcol" width="70%" />
           <col width="15%" />
           <col width="15%" />
         </colgroup>
         <thead>
-          <tr>
+          <tr className="mview">
             <th>상세 정보</th>
             <th>상품 가격</th>
             <th>상품 등록일</th>
           </tr>
         </thead>
         <tbody>
-          {wishlist?.slice(offset, offset + 10).map((data: Props) => (
-            <S.WishBox key={data.title}>
-              <td className="checkboxcotainer">
-                <div className="checkwrap">
-                  <S.CheckBox
-                    checked={!!keepChecked(data)}
-                    data-id={data.id}
-                    onChange={handleChange}
-                    type="checkbox"
-                  />
-                  <Check />
-                </div>
-                <div className="img">
-                  <img src={data.images} alt={data.title} />
-                </div>
-                <div className="descbox">
-                  <div className="wishname">{data.title}</div>
-                  <div className="wishdesc">{data.description}</div>
-                </div>
-              </td>
-              <td className="wishprice">{data.price}</td>
-              <td className="wishdate">{dateRest(data.createdAt)}</td>
-            </S.WishBox>
-          ))}
+          {wishlist ? (
+            wishlist?.slice(offset, offset + 10).map((data: Props) => (
+              <S.WishBox key={data.title}>
+                <td className="checkboxcotainer">
+                  <div className="checkwrap">
+                    <S.CheckBox
+                      checked={!!keepChecked(data)}
+                      data-id={data.id}
+                      onChange={handleChange}
+                      type="checkbox"
+                    />
+                    <Check />
+                  </div>
+                  <div>
+                    <img src={data.images} alt={data.title} />
+                  </div>
+                  <div className="descbox">
+                    <div className="wishname">{data.title}</div>
+                    <div className="wishdesc">{data.description}</div>
+                    <div className="mobile">
+                      <div className="mprice">{data.price}</div>
+                      <div className="mdate">{dateRest(data.createdAt)}</div>
+                    </div>
+                  </div>
+                </td>
+                <td className="wishprice mview">{data.price}</td>
+                <td className="wishdate mview">{dateRest(data.createdAt)}</td>
+              </S.WishBox>
+            ))
+          ) : (
+            <S.NoWishlist> 장바구니가 비어 있습니다.</S.NoWishlist>
+          )}
         </tbody>
       </table>
       <S.BuyBtn onClick={consoleHandler}> 구매하기</S.BuyBtn>
