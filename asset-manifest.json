@@ -1,10 +1,14 @@
 {
   "files": {
-    "main.js": "/alphabeta-assignment/static/js/main.7589f01e.js",
+    "main.js": "/alphabeta-assignment/static/js/main.c1ee2a5b.js",
+    "static/media/logo.svg": "/alphabeta-assignment/static/media/logo.350d07500ea85adddca2d03d7a38b15b.svg",
     "index.html": "/alphabeta-assignment/index.html",
-    "main.7589f01e.js.map": "/alphabeta-assignment/static/js/main.7589f01e.js.map"
+    "static/media/pagination.svg": "/alphabeta-assignment/static/media/pagination.1d6525c9ad1f3f6711b66493f572518f.svg",
+    "static/media/check.svg": "/alphabeta-assignment/static/media/check.9f1e9f1c65d56f327fb5297428926abc.svg",
+    "static/media/arrow_up.svg": "/alphabeta-assignment/static/media/arrow_up.48a50efc73d7557e5aea010ffb5b0584.svg",
+    "main.c1ee2a5b.js.map": "/alphabeta-assignment/static/js/main.c1ee2a5b.js.map"
   },
   "entrypoints": [
-    "static/js/main.7589f01e.js"
+    "static/js/main.c1ee2a5b.js"
   ]
 }
