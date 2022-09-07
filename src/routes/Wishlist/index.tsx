@@ -2,8 +2,8 @@ import { ChangeEvent, useState } from 'react'
 import store from 'storejs'
 
 import Pagination from '../../components/Pagination'
-import WishItem from '../../components/WishItem'
 import { Props } from '../../types'
+import { ReactComponent as Check } from '../../assets/imgs/check.svg'
 
 import * as S from './style'
 
@@ -53,32 +53,56 @@ const Wishlist = () => {
     console.log(chekedList)
   }
 
+  const dateRest = (item: string) => {
+    const date = item.split('/')
+    const newDate = date[2].concat('-', date[0], '-', date[1])
+    return newDate
+  }
+
   return (
     <S.WishListContainer>
-      <div className="listdesc">
-        <div>상품 이미지</div>
-        <div className="name">상품 이름</div>
-        <div>상세 설명</div>
-        <div>상품 가격</div>
-        <div>상품 등록일</div>
-      </div>
-      {wishlist ? (
-        wishlist?.slice(offset, offset + 10).map((data: Props) => (
-          <div className="wishlistbox" key={data.title}>
-            <S.CheckBox
-              checked={!!keepChecked(data)}
-              data-id={data.id}
-              onChange={handleChange}
-              type="checkbox"
-            />
-
-            <WishItem item={data} />
-          </div>
-        ))
-      ) : (
-        <div className="notwish"> 장바구니가 비어있습니다.</div>
-      )}
-      <button onClick={consoleHandler}> 구매하기</button>
+      <div className="maintitle">장바구니</div>
+      <table>
+        <colgroup>
+          <col width="70%" />
+          <col width="15%" />
+          <col width="15%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>상세 정보</th>
+            <th>상품 가격</th>
+            <th>상품 등록일</th>
+          </tr>
+        </thead>
+        <tbody>
+          {wishlist?.slice(offset, offset + 10).map((data: Props) => (
+            <S.WishBox key={data.title}>
+              <td className="checkboxcotainer">
+                <div className="checkwrap">
+                  <S.CheckBox
+                    checked={!!keepChecked(data)}
+                    data-id={data.id}
+                    onChange={handleChange}
+                    type="checkbox"
+                  />
+                  <Check />
+                </div>
+                <div className="img">
+                  <img src={data.images} alt={data.title} />
+                </div>
+                <div className="descbox">
+                  <div className="wishname">{data.title}</div>
+                  <div className="wishdesc">{data.description}</div>
+                </div>
+              </td>
+              <td className="wishprice">{data.price}</td>
+              <td className="wishdate">{dateRest(data.createdAt)}</td>
+            </S.WishBox>
+          ))}
+        </tbody>
+      </table>
+      <S.BuyBtn onClick={consoleHandler}> 구매하기</S.BuyBtn>
       <Pagination
         total={wishlist?.length}
         limit={10}

@@ -19,6 +19,5 @@ export const TemplateMain = styled.main`
   .on {
     opacity: 0;
     visibility: hidden;
-    transition: all 0.2s ease-in-out 0s;
   }
 `

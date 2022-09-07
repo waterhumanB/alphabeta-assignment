@@ -29,23 +29,26 @@ const Detail = () => {
 
   return (
     <S.DetailContainer>
-      <div className="imgbox">
-        <img src={state.images} alt={state.title} />
-      </div>
-      <div className="descbox">
-        <div className="title">{state.title}</div>
-        <div className="desc">{state.description}</div>
-        <div className="price">{state.price}</div>
-
-        <div className="btnwrap">
-          <div className="btnbox">
-            <button onClick={infoConsole}>구매하기</button>
-            <button onClick={wishlistHandler}>장바구니</button>
-          </div>
-          <div className="date">{newDate}</div>
+      <div className="pagetitle">상세페이지</div>
+      <div className="detailbox">
+        <div className="imgbox">
+          <img src={state.images} alt={state.title} />
         </div>
+        <div className="descbox">
+          <div className="title">{state.title}</div>
+          <div className="desc">{state.description}</div>
+          <div className="price">{state.price}</div>
+
+          <div className="btnwrap">
+            <div className="btnbox">
+              <button onClick={infoConsole}>구매하기</button>
+              <button onClick={wishlistHandler}>장바구니</button>
+            </div>
+            <div className="date">{newDate}</div>
+          </div>
+        </div>
+        {modalOpen && <Modal toggleModal={ToggleModal} item={state} />}
       </div>
-      {modalOpen && <Modal toggleModal={ToggleModal} item={state} />}
     </S.DetailContainer>
   )
 }

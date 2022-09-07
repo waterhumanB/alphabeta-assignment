@@ -4,8 +4,24 @@ export const DetailContainer = styled.div`
   width: 100%;
   margin: auto;
   padding: 40px 10px;
-  display: flex;
-  flex-wrap: wrap;
+
+  .pagetitle {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #999;
+    @media screen and (max-width: 600px) {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  .detailbox {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .imgbox {
     margin: auto auto 20px;
@@ -60,6 +76,12 @@ export const DetailContainer = styled.div`
         box-sizing: border-box;
         border-radius: 15px;
         padding: 4px 8px;
+
+        &:hover {
+          background: #999;
+          color: #fff;
+          border: 1px solid #fff;
+        }
 
         &:active {
           color: #fff;
