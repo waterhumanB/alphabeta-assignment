@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import store from 'storejs'
 
 import { Props } from '../../types'
 import Modal from '../modal'
@@ -21,14 +20,7 @@ const Detail = () => {
   }
 
   const wishlistHandler = () => {
-    const wishlist = store.get('wishlist')
-    const deduplication = wishlist?.find((e: Props) => e.id === state.id)
-
-    if (!deduplication) {
-      const newWishlist = wishlist ? [...wishlist, state] : [state]
-      store.set('wishlist', newWishlist)
-      setModalOpen(!modalOpen)
-    }
+    setModalOpen(!modalOpen)
   }
 
   const ToggleModal = useCallback(() => {
@@ -46,14 +38,14 @@ const Detail = () => {
         <div className="price">{state.price}</div>
 
         <div className="btnwrap">
-          <div>
+          <div className="btnbox">
             <button onClick={infoConsole}>구매하기</button>
             <button onClick={wishlistHandler}>장바구니</button>
           </div>
-          <div>{newDate}</div>
+          <div className="date">{newDate}</div>
         </div>
       </div>
-      {modalOpen && <Modal toggleModal={ToggleModal} />}
+      {modalOpen && <Modal toggleModal={ToggleModal} item={state} />}
     </S.DetailContainer>
   )
 }

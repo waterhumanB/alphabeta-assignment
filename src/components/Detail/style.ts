@@ -3,11 +3,21 @@ import styled from 'styled-components'
 export const DetailContainer = styled.div`
   width: 100%;
   margin: auto;
-  padding: 40px 30px;
+  padding: 40px 10px;
   display: flex;
+  flex-wrap: wrap;
 
   .imgbox {
-    margin: auto;
+    margin: auto auto 20px;
+
+    img {
+      width: 260px;
+      height: 260px;
+      margin: auto;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
   }
 
   .descbox {
@@ -15,25 +25,53 @@ export const DetailContainer = styled.div`
   }
 
   .title {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 30px;
+    font-weight: 700;
   }
 
   .desc {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+    font-size: 20px;
+    border-bottom: 1px solid #999;
   }
 
   .price {
-    margin-bottom: 60px;
+    margin: 30px auto 40px;
+    font-size: 22px;
+    font-weight: 700;
   }
 
   .btnwrap {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
-    button {
-      margin-right: 40px;
+    .btnbox {
+      display: flex;
+
+      button {
+        margin-right: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 4px 8px;
+
+        &:active {
+          color: #fff;
+          background: #000;
+        }
+      }
+    }
+
+    .date {
+      width: 80px;
+      color: #999;
+      font-weight: 700;
     }
   }
 `

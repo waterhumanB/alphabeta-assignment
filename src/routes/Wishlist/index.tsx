@@ -78,13 +78,13 @@ const Wishlist = () => {
       ) : (
         <div className="notwish"> 장바구니가 비어있습니다.</div>
       )}
+      <button onClick={consoleHandler}> 구매하기</button>
       <Pagination
         total={wishlist?.length}
         limit={10}
         page={page}
         setPage={setPage}
       />
-      <button onClick={consoleHandler}> 구매하기</button>
     </S.WishListContainer>
   )
 }

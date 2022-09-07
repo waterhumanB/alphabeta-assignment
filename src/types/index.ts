@@ -11,6 +11,7 @@ export interface Props {
 
 export interface Modalprops {
   toggleModal: () => void
+  item: Props
 }
 
 export interface ItemProps {

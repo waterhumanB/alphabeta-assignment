@@ -13,7 +13,7 @@ export const ItemBox = styled.button`
     height: 260px;
     margin: auto;
     object-fit: contain;
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
   }
 
   .desc {
