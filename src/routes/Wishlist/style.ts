@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const WishListContainer = styled.div`
+  max-width: 1200px;
+  margin: auto;
   padding: 20px 15px;
   @media screen and (max-width: 650px) {
     padding: 20px 5px;
   }
 
   table {
-    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -170,6 +171,10 @@ export const CheckBox = styled.input`
       opacity: 1;
     }
   }
+`
+
+export const LinkBtn = styled.button`
+  display: flex;
 `
 
 export const NoWishlist = styled.div`

@@ -1,6 +1,12 @@
 # AlphabetA 기업과제
 
-## [배포주소](https://waterhumanb.github.io/alphabeta-assignment/)
+# [프로젝트 배포 주소](https://waterhumanb.github.io/alphabeta-assignment/)
+
+# 기술 스택
+
+```
+React, typeScript, styled-components
+```
 
 # 요구사항
 
@@ -53,6 +59,6 @@
 
 ## 추가 기능 구현 (+지원자)
 
-- [x] 스크롤 맨 하단에서 맨 상단으로 scroll up 하는 버튼
+- [x] 스크롤 맨 하단에서 맨 상단으로 이동 하는 버튼
 - [x] 상세페이지에서 장바구니 버튼 누르면 장바구니 여부에 따라 추가 및 해지 가능
 - [x] 상세페이지에서 구매하기 버튼 클릭시 제품 정보 console.log 띄우기

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const DetailContainer = styled.div`
-  width: 100%;
+  max-width: 1200px;
   margin: auto;
   padding: 40px 10px;
   @media screen and (max-width: 600px) {

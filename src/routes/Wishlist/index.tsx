@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import store from 'storejs'
+import { Link } from 'react-router-dom'
 
 import Pagination from '../../components/Pagination'
 import { Props } from '../../types'
@@ -89,17 +90,23 @@ const Wishlist = () => {
                     />
                     <Check />
                   </div>
-                  <div>
-                    <img src={data.images} alt={data.title} />
-                  </div>
-                  <div className="descbox">
-                    <div className="wishname">{data.title}</div>
-                    <div className="wishdesc">{data.description}</div>
-                    <div className="mobile">
-                      <div className="mprice">{data.price}</div>
-                      <div className="mdate">{dateRest(data.createdAt)}</div>
-                    </div>
-                  </div>
+                  <Link state={data} to={`/detail/${data.id}`}>
+                    <S.LinkBtn>
+                      <div>
+                        <img src={data.images} alt={data.title} />
+                      </div>
+                      <div className="descbox">
+                        <div className="wishname">{data.title}</div>
+                        <div className="wishdesc">{data.description}</div>
+                        <div className="mobile">
+                          <div className="mprice">{data.price}</div>
+                          <div className="mdate">
+                            {dateRest(data.createdAt)}
+                          </div>
+                        </div>
+                      </div>
+                    </S.LinkBtn>
+                  </Link>
                 </td>
                 <td className="wishprice mview">{data.price}</td>
                 <td className="wishdate mview">{dateRest(data.createdAt)}</td>
